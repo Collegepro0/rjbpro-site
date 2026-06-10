@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who We Are | RJB Contracting</title>
+<meta name="description" content="Family-owned since 1992, RJB Contracting has grown from a Philadelphia-area coatings specialist into a national commercial contractor serving America's biggest retail brands across 48 states.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   RJB PRO — WHO WE ARE v1
+   MAINTAINER NOTES (Ron):
+   1. LEADERSHIP GRID: the six cards near the bottom are
+      placeholders. Fill in names/titles you want public and
+      delete the rest. Headshots: upload to /images/team/ and
+      set the inline style on .person-photo.
+   2. TIMELINE: dates/milestones are drafted from your current
+      about page. Verify and adjust the story beats.
+   3. Photos are Unsplash placeholders — swap for RJB
+      photography (the HQ/training facility shot matters most
+      here; clients want to see the real operation).
+   ========================================================= */
+:root{
+  --ink:#15191E; --steel:#2B3540; --paper:#F4F5F3; --white:#FFFFFF;
+  --accent:#E8650D; --muted:#8C959D;
+  --line:rgba(21,25,30,.12); --line-light:rgba(255,255,255,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid currentColor;transition:background .2s,color .2s}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(5px)}
+.btn-solid{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.btn-solid:hover{background:#C95306;border-color:#C95306}
+.btn-ghost-light{color:var(--white)}
+.btn-ghost-light:hover{background:var(--white);color:var(--ink)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,25,30,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-light)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center}
+.logo img{height:44px;width:auto;display:block;background:var(--white);padding:5px 10px;border-radius:2px}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--white);border-color:var(--accent)}
+.nav-cta{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:11px 20px}
+.nav-cta:hover{background:#C95306}
+.menu-btn{display:none;background:none;border:1px solid var(--line-light);color:var(--white);padding:9px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+@media(max-width:920px){
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:12px 32px 24px;border-bottom:1px solid var(--line-light)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:12px 0}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+}
+
+/* PAGE HERO */
+.page-hero{background:
+  linear-gradient(180deg,rgba(21,25,30,.74),rgba(21,25,30,.88)),
+  url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2000&q=70') center/cover no-repeat var(--steel);
+  color:var(--white);padding:170px 0 70px}
+.page-hero h1{font-size:clamp(50px,7vw,94px);max-width:14ch}
+.page-hero p{margin-top:18px;max-width:600px;color:rgba(255,255,255,.84);font-size:17px}
+
+/* STORY */
+.story{padding:104px 0;background:var(--white)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.story h2{font-size:clamp(38px,4.6vw,58px);margin-top:14px}
+.story-copy p{margin-top:20px;color:#3C454E;font-size:16.5px}
+.story-photo{min-height:480px;background:
+  linear-gradient(180deg,rgba(21,25,30,.06),rgba(21,25,30,.32)),
+  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=70') center/cover no-repeat var(--steel);position:sticky;top:104px}
+@media(max-width:920px){.story-grid{grid-template-columns:1fr;gap:44px}.story-photo{min-height:320px;position:static}}
+
+/* TIMELINE */
+.timeline{background:var(--ink);color:var(--white);padding:104px 0}
+.timeline h2{font-size:clamp(38px,4.6vw,58px);margin-top:14px;max-width:18ch}
+.tl{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line-light)}
+.tl-item{background:var(--ink);padding:34px 28px 38px;border-top:3px solid transparent;transition:border-color .25s}
+.tl-item:hover{border-top-color:var(--accent)}
+.tl-item .yr{font-family:'Barlow Condensed';font-weight:700;font-size:46px;color:var(--accent);line-height:1}
+.tl-item h3{font-size:22px;margin-top:14px}
+.tl-item p{margin-top:10px;font-size:13.5px;color:rgba(255,255,255,.7)}
+@media(max-width:920px){.tl{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tl{grid-template-columns:1fr}}
+
+/* RJB ABILITY */
+.ability{padding:104px 0;background:var(--paper)}
+.ability .lede{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:54px}
+.ability h2{font-size:clamp(40px,5vw,64px);margin-top:14px}
+.ability h2 .br{color:var(--accent)}
+.ability .lede p{color:#3C454E;font-size:16.5px}
+.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.val{background:var(--white);padding:32px 26px 36px}
+.val h3{font-size:22px}
+.val p{margin-top:10px;font-size:13.5px;color:#4A535C}
+@media(max-width:920px){.ability .lede{grid-template-columns:1fr;gap:20px}.vals{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.vals{grid-template-columns:1fr}}
+
+/* FAMILY */
+.family{padding:104px 0;background:var(--white)}
+.fam-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.fam-photo{min-height:440px;background:
+  linear-gradient(180deg,rgba(21,25,30,.06),rgba(21,25,30,.32)),
+  url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=70') center/cover no-repeat var(--steel)}
+.fam-copy h2{font-size:clamp(38px,4.6vw,58px);margin-top:14px}
+.fam-copy p{margin-top:20px;color:#3C454E;font-size:16.5px}
+.fam-copy .pull{margin-top:28px;padding-left:22px;border-left:3px solid var(--accent);font-family:'Barlow Condensed';font-weight:600;font-size:24px;line-height:1.25;text-transform:none}
+@media(max-width:920px){.fam-grid{grid-template-columns:1fr;gap:44px}.fam-photo{min-height:320px}}
+
+/* LEADERSHIP */
+.leaders{padding:104px 0;background:var(--paper)}
+.leaders h2{font-size:clamp(38px,4.6vw,58px);margin-top:14px}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.person{background:var(--white);border:1px solid var(--line)}
+.person-photo{height:300px;background:linear-gradient(150deg,#41566B,#222B34) center/cover no-repeat}
+.person .pb{padding:22px 24px 26px}
+.person h3{font-size:23px}
+.person .role{margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+@media(max-width:920px){.people{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.people{grid-template-columns:1fr}}
+
+/* MEMBERSHIPS */
+.member{background:var(--white);border-top:1px solid var(--line);padding:56px 0}
+.member .wrap{display:flex;align-items:center;gap:14px 56px;flex-wrap:wrap}
+.member .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#4A535C;margin-right:24px}
+.member span.m{font-family:'Barlow Condensed';font-weight:600;font-size:24px;letter-spacing:.06em;text-transform:uppercase;color:#3C454E}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--white);padding:88px 0}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta h2{font-size:clamp(34px,4vw,52px);max-width:18ch;margin-top:12px}
+.cta p{margin-top:14px;color:rgba(255,255,255,.72);max-width:48ch}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:72px 0 36px;font-size:14px;border-top:1px solid var(--line-light)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-light)}
+.f-grid h4{font-family:'Barlow Condensed';font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:16px}
+.f-grid ul{list-style:none}
+.f-grid li{margin-bottom:10px}
+.f-grid a:hover{color:var(--white)}
+.f-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:12.5px;color:rgba(255,255,255,.4)}
+@media(max-width:920px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="../"><img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="const n=document.getElementById('navlinks');const open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a class="active" href="../about-us/">Who We Are</a></li>
+      <li><a href="../#sectors">What We Do</a></li>
+      <li><a href="../projects/">Projects</a></li>
+      <li><a href="../insights/">Insights</a></li>
+      <li><a href="../careers/">Careers</a></li>
+    </ul>
+    <a class="nav-cta" href="../contact-us/">Start a Project</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Who We Are</p>
+    <h1>Built by hand. Built to last.</h1>
+    <p>Family-owned since 1992, RJB has grown from a Philadelphia-area coatings specialist into a national commercial contractor trusted by America's biggest retail brands.</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap story-grid">
+    <div class="story-copy">
+      <p class="eyebrow">Our Story</p>
+      <h2>From one trade to one accountable partner.</h2>
+      <p>Ron Bacskai founded RJB in 1992 just outside Philadelphia as a specialized provider of commercial coatings. The work was simple to describe and hard to do well: show up, do what you said, leave the store better than you found it.</p>
+      <p>That standard won repeat work, and repeat work demanded more capability. RJB grew trade by trade into a comprehensive commercial general contractor — self-performing paint, drywall, carpentry, and fixturing, and managing national vendor programs to the same specification we hold our own crews to.</p>
+      <p>Today RJB serves clients across 48 states from our 20,000-square-foot headquarters and training facility in Spring City, PA — where our teams define best practices before they ever reach your site.</p>
+    </div>
+    <div class="story-photo" role="img" aria-label="RJB headquarters and training facility"></div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="wrap">
+    <p class="eyebrow">Three Decades of Showing Up</p>
+    <h2>The same standard, at every scale.</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="yr">1992</div>
+        <h3>Founded</h3>
+        <p>RJB opens outside Philadelphia as a specialized commercial coatings contractor.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2000s</div>
+        <h3>Becoming a GC</h3>
+        <p>Client demand pulls RJB into drywall, carpentry, and full interior construction — one accountable partner instead of many.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2010s</div>
+        <h3>Going National</h3>
+        <p>Fortune 500 retail programs take RJB coast to coast, building the vendor network and field organization that run today.</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">Today</div>
+        <h3>48 States &amp; Counting</h3>
+        <p>A national footprint, four self-performed trades, and the second generation of the Bacskai family in the business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ability">
+  <div class="wrap">
+    <div class="lede">
+      <div>
+        <p class="eyebrow">How We Work</p>
+        <h2>RJB <span class="br">[Ability]</span></h2>
+      </div>
+      <p>Great work doesn't just happen. It results from an unwavering commitment to the client, intelligent planning, strong communication, and the collective abilities of an experienced team. RJB [Ability] is how we show up — on every site, every night, in every state.</p>
+    </div>
+    <div class="vals">
+      <div class="val">
+        <h3>Accountability</h3>
+        <p>One partner responsible for the entire process, from inception to completion. No finger-pointing, ever.</p>
+      </div>
+      <div class="val">
+        <h3>Planning</h3>
+        <p>We eliminate uncertainty before mobilization. Planning has been the foundation of our success since day one.</p>
+      </div>
+      <div class="val">
+        <h3>Communication</h3>
+        <p>Clients know project status at every step — clear, direct, and without surprises.</p>
+      </div>
+      <div class="val">
+        <h3>Safety</h3>
+        <p>An internal Safety Committee and Safety Management Program put our people's well-being first on every project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="family">
+  <div class="wrap fam-grid">
+    <div class="fam-photo" role="img" aria-label="The RJB team"></div>
+    <div class="fam-copy">
+      <p class="eyebrow">Family-Owned</p>
+      <h2>Building for the next 40 years.</h2>
+      <p>RJB is a family business — founded by Ron Bacskai, built with three decades of relationships, and now welcoming the second generation of family leadership into the company.</p>
+      <p>That ownership structure isn't a footnote. It's why we make decisions for the long term: investing in our people, standing behind our work past the warranty date, and treating client relationships as something we plan to keep for decades, not quarters.</p>
+      <div class="pull">When your contractor's name is on the door, the work gets done right.</div>
+    </div>
+  </div>
+</section>
+
+<section class="leaders">
+  <div class="wrap">
+    <p class="eyebrow">Leadership</p>
+    <h2>The team behind the teams.</h2>
+    <!-- PLACEHOLDERS: fill in the leaders you want public; delete extra cards.
+         Headshots: /images/team/name.jpg via inline style on .person-photo -->
+    <div class="people">
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>Ron Bacskai</h3><div class="role">Founder &amp; President</div></div>
+      </div>
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>[Name]</h3><div class="role">[Title]</div></div>
+      </div>
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>[Name]</h3><div class="role">[Title]</div></div>
+      </div>
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>[Name]</h3><div class="role">[Title]</div></div>
+      </div>
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>[Name]</h3><div class="role">[Title]</div></div>
+      </div>
+      <div class="person">
+        <div class="person-photo"></div>
+        <div class="pb"><h3>[Name]</h3><div class="role">[Title]</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="member">
+  <div class="wrap">
+    <span class="lbl">Industry Memberships</span>
+    <span class="m">ICSC</span>
+    <span class="m">RFMA</span>
+    <span class="m">ConnexFM</span>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Work With Us</p>
+      <h2>Thirty years of showing up. Let's talk.</h2>
+      <p>Whether it's one store or a national program, you'll get the same answer we've given since 1992: we'll be there.</p>
+    </div>
+    <a class="btn btn-solid" href="../contact-us/">Start a Project <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors" style="height:48px;width:auto;background:var(--white);padding:5px 10px;border-radius:2px;margin-bottom:18px">
+        <h4>RJB Contracting, Inc.</h4>
+        <p>562 Ridge Road, Spring City, PA 19475<br>info@rjbpro.com</p>
+        <p style="margin-top:14px">Member: ICSC · RFMA · ConnexFM</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="../about-us/">About Us</a></li><li><a href="../about-us/#leadership">Leadership</a></li><li><a href="../careers/">Careers</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="../retail-construction/">Retail Construction</a></li><li><a href="../warehouse-construction/">Warehouse</a></li><li><a href="../asset-maintenance/">Asset Maintenance</a></li></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul><li><a href="../contact-us/">Start a Project</a></li><li><a href="../subcontractors/">Become a Subcontractor</a></li><li><a href="https://www.linkedin.com/company/rjbpro" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 RJB Contracting, Inc. All rights reserved.</span>
+      <span>Family-owned and operated since 1992.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
