@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse & Industrial | RJB Contracting</title>
+<meta name="description" content="RJB delivers warehouse and distribution facility construction and renovation — planned around live operations, across 48 states.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15191E; --steel:#2B3540; --paper:#F4F5F3; --white:#FFFFFF;
+  --accent:#E8650D; --muted:#8C959D;
+  --line:rgba(21,25,30,.12); --line-light:rgba(255,255,255,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid currentColor;transition:background .2s,color .2s;cursor:pointer;background:none;font-family:'Public Sans',sans-serif}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(5px)}
+.btn-solid{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.btn-solid:hover{background:#C95306;border-color:#C95306}
+.btn-ghost-light{color:var(--white)}
+.btn-ghost-light:hover{background:var(--white);color:var(--ink)}
+.btn-ghost-dark{color:var(--ink)}
+.btn-ghost-dark:hover{background:var(--ink);color:var(--white)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,25,30,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-light)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center}
+.logo img{height:44px;width:auto;display:block;background:var(--white);padding:5px 10px;border-radius:2px}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--white);border-color:var(--accent)}
+.nav-cta{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:11px 20px}
+.nav-cta:hover{background:#C95306}
+.menu-btn{display:none;background:none;border:1px solid var(--line-light);color:var(--white);padding:9px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+@media(max-width:920px){
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:12px 32px 24px;border-bottom:1px solid var(--line-light)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:12px 0}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+}
+.page-hero{color:var(--white);padding:170px 0 70px;background-color:var(--steel);background-size:cover;background-position:center}
+.page-hero h1{font-size:clamp(50px,7vw,94px);max-width:14ch}
+.page-hero p{margin-top:18px;max-width:600px;color:rgba(255,255,255,.84);font-size:17px}
+.intro{padding:104px 0;background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.intro h2{font-size:clamp(36px,4.4vw,56px);margin-top:14px}
+.intro p{margin-top:20px;color:#3C454E;font-size:16.5px}
+.intro-photo{min-height:440px;background-color:var(--steel);background-size:cover;background-position:center}
+@media(max-width:920px){.intro-grid{grid-template-columns:1fr;gap:44px}.intro-photo{min-height:320px}}
+.caps{padding:96px 0;background:var(--paper)}
+.caps h2{font-size:clamp(36px,4.4vw,54px);margin-top:14px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-top:46px}
+.cap{background:var(--white);padding:30px 26px 34px}
+.cap h3{font-size:21px}
+.cap p{margin-top:10px;font-size:13.5px;color:#4A535C}
+@media(max-width:920px){.cap-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cap-grid{grid-template-columns:1fr}}
+.proof{background:var(--ink);color:var(--white);padding:72px 0}
+.proof .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.proof .n{font-family:'Barlow Condensed';font-weight:700;font-size:54px;line-height:1;color:var(--accent)}
+.proof .l{margin-top:8px;font-size:14px;color:rgba(255,255,255,.75);max-width:26ch}
+@media(max-width:920px){.proof .wrap{grid-template-columns:1fr}}
+.cta{background:var(--steel);color:var(--white);padding:88px 0}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta h2{font-size:clamp(34px,4vw,52px);max-width:18ch;margin-top:12px}
+.cta p{margin-top:14px;color:rgba(255,255,255,.72);max-width:48ch}
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:72px 0 36px;font-size:14px;border-top:1px solid var(--line-light)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-light)}
+.f-grid h4{font-family:'Barlow Condensed';font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:16px}
+.f-grid ul{list-style:none}
+.f-grid li{margin-bottom:10px}
+.f-grid a:hover{color:var(--white)}
+.f-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:12.5px;color:rgba(255,255,255,.4)}
+@media(max-width:920px){.f-grid{grid-template-columns:1fr 1fr}}
+/* forms */
+.formwrap{padding:96px 0;background:var(--white)}
+.form-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px}
+@media(max-width:920px){.form-grid{grid-template-columns:1fr;gap:44px}}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:560px){form .row{grid-template-columns:1fr}}
+label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:22px 0 8px;color:#3C454E}
+input,select,textarea{width:100%;padding:14px 16px;border:1px solid var(--line);background:var(--paper);font-family:'Public Sans',sans-serif;font-size:15px;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+textarea{min-height:140px;resize:vertical}
+form .btn{margin-top:30px}
+.side h2{font-size:clamp(30px,3.6vw,44px);margin-top:14px}
+.side p{margin-top:16px;color:#3C454E}
+.side .block{margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+.side .block b{font-family:'Barlow Condensed';font-size:18px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+/* insights cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:46px}
+.card{border:1px solid var(--line);background:var(--white);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(21,25,30,.10)}
+.card .thumb{height:180px;background:linear-gradient(150deg,#41566B,#222B34) center/cover no-repeat}
+.card .body{padding:24px 24px 28px}
+.card .kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.card h3{font-size:24px;margin-top:10px;line-height:1.1}
+.card p{margin-top:10px;font-size:14px;color:#4A535C}
+.card .date{margin-top:14px;font-size:12px;color:var(--muted)}
+@media(max-width:920px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="const n=document.getElementById('navlinks');const open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="about-us.html">Who We Are</a></li>
+      <li><a class="active" href="index.html#sectors">What We Do</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+    <a class="nav-cta" href="contact-us.html">Start a Project</a>
+  </div>
+</nav>
+<section class="page-hero" style="background-image:linear-gradient(180deg,rgba(21,25,30,.74),rgba(21,25,30,.88)),url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2000&q=70')">
+  <div class="wrap">
+    <p class="eyebrow">What We Do</p>
+    <h1>Warehouse &amp; Industrial</h1>
+    <p>Construction and renovation for distribution and fulfillment facilities — sequenced so product never stops moving.</p>
+  </div>
+</section>
+<section class="intro">
+  <div class="wrap intro-grid">
+    <div>
+      <p class="eyebrow">Overview</p>
+      <h2>Built around live operations.</h2>
+      <p>A distribution center can't pause for construction. RJB plans warehouse work the way operators run facilities: bay by bay, shift by shift, with safety and throughput protected at every step.</p><p>From interior build-outs and office space to floor programs and fire protection upgrades, we bring the same planning discipline that wins us Fortune 500 retail programs to the industrial side of your portfolio.</p>
+    </div>
+    <div class="intro-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,.06),rgba(21,25,30,.32)),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=70')" role="img" aria-label="Warehouse & Industrial project"></div>
+  </div>
+</section>
+<section class="caps">
+  <div class="wrap">
+    <p class="eyebrow">Capabilities</p>
+    <h2>What we deliver.</h2>
+    <div class="cap-grid"><div class="cap"><h3>Interior Build-Outs</h3><p>Offices, breakrooms, and operational spaces inside active facilities.</p></div><div class="cap"><h3>Floor Programs</h3><p>Concrete repair, joint work, and coatings sequenced to keep bays moving.</p></div><div class="cap"><h3>Fire Protection</h3><p>Sprinkler system upgrades and code compliance packages.</p></div><div class="cap"><h3>Renovation</h3><p>Facility upgrades and reconfigurations for changing operations.</p></div><div class="cap"><h3>Exterior & Envelope</h3><p>Roofing support, dock work, coatings, and building envelope repair.</p></div><div class="cap"><h3>Multi-Site Programs</h3><p>Network-wide programs delivered to a single specification.</p></div></div>
+  </div>
+</section>
+<section class="proof">
+  <div class="wrap"><div><div class="n">0</div><div class="l">downtime — work sequenced around throughput</div></div><div><div class="n">48</div><div class="l">states of industrial coverage</div></div><div><div class="n">1</div><div class="l">accountable partner, inception to completion</div></div></div>
+</section>
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Your Facility</p>
+      <h2>Keep product moving. We'll build around it.</h2>
+      <p>Tell us the operational constraints — that's where our planning starts.</p>
+    </div>
+    <a class="btn btn-solid" href="contact-us.html">Start a Project <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors" style="height:48px;width:auto;background:var(--white);padding:5px 10px;border-radius:2px;margin-bottom:18px">
+        <h4>RJB Contracting, Inc.</h4>
+        <p>562 Ridge Road, Spring City, PA 19475<br>info@rjbpro.com</p>
+        <p style="margin-top:14px">Member: ICSC &middot; RFMA &middot; ConnexFM</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="about-us.html">About Us</a></li><li><a href="about-us.html#leadership">Leadership</a></li><li><a href="careers.html">Careers</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="retail-construction.html">Retail Construction</a></li><li><a href="warehouse-construction.html">Warehouse</a></li><li><a href="asset-maintenance.html">Asset Maintenance</a></li></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul><li><a href="contact-us.html">Start a Project</a></li><li><a href="subcontractors.html">Become a Subcontractor</a></li><li><a href="https://www.linkedin.com/company/rjbpro" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 RJB Contracting, Inc. All rights reserved.</span>
+      <span>Family-owned and operated since 1992.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

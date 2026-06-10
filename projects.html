@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | RJB Contracting</title>
+<meta name="description" content="Explore RJB Contracting's portfolio of retail construction, warehouse, and asset maintenance projects for America's biggest brands across 48 states.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   RJB PRO — PROJECTS PAGE v1
+   MAINTAINER NOTES (Ron):
+   1. ADDING A PROJECT: copy one <article class="proj"> block,
+      paste it in the grid, edit the text, set data-sector to
+      retail | warehouse | maintenance, and set the photo via
+      the inline style on .proj-photo.
+   2. ALL SAMPLE PROJECTS BELOW ARE PLACEHOLDERS — representative
+      project types, not real claims. Replace titles, locations,
+      and scope lines with real RJB projects before launch.
+   3. Photos are free Unsplash placeholders — swap for RJB
+      jobsite photography (upload to /images/, change the URL).
+   ========================================================= */
+:root{
+  --ink:#15191E; --steel:#2B3540; --paper:#F4F5F3; --white:#FFFFFF;
+  --accent:#E8650D; --muted:#8C959D;
+  --line:rgba(21,25,30,.12); --line-light:rgba(255,255,255,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Public Sans',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid currentColor;transition:background .2s,color .2s}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(5px)}
+.btn-solid{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.btn-solid:hover{background:#C95306;border-color:#C95306}
+.btn-ghost-light{color:var(--white)}
+.btn-ghost-light:hover{background:var(--white);color:var(--ink)}
+
+/* NAV (same as homepage) */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(21,25,30,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-light)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center}
+.logo img{height:44px;width:auto;display:block;background:var(--white);padding:5px 10px;border-radius:2px}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--white);border-color:var(--accent)}
+.nav-links a.active{color:var(--white);border-color:var(--accent)}
+.nav-cta{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--accent);padding:11px 20px}
+.nav-cta:hover{background:#C95306}
+.menu-btn{display:none;background:none;border:1px solid var(--line-light);color:var(--white);padding:9px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+@media(max-width:920px){
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0;padding:12px 32px 24px;border-bottom:1px solid var(--line-light)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:12px 0}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+}
+
+/* PAGE HERO */
+.page-hero{background:
+  linear-gradient(180deg,rgba(21,25,30,.78),rgba(21,25,30,.88)),
+  url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=70') center/cover no-repeat var(--steel);
+  color:var(--white);padding:170px 0 70px}
+.page-hero h1{font-size:clamp(52px,7vw,96px)}
+.page-hero p{margin-top:18px;max-width:560px;color:rgba(255,255,255,.82);font-size:17px}
+
+/* FILTER BAR */
+.filterbar{position:sticky;top:72px;z-index:40;background:var(--white);border-bottom:1px solid var(--line)}
+.filterbar .wrap{display:flex;gap:8px;flex-wrap:wrap;padding-top:16px;padding-bottom:16px}
+.fbtn{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 18px;border:1px solid var(--line);background:var(--white);color:#4A535C;cursor:pointer;transition:all .2s}
+.fbtn:hover{border-color:var(--ink);color:var(--ink)}
+.fbtn.active{background:var(--ink);border-color:var(--ink);color:var(--white)}
+
+/* PROJECT GRID */
+.projects{padding:64px 0 96px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.proj{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.proj:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(21,25,30,.10)}
+.proj.hide{display:none}
+.proj-photo{height:230px;background-color:var(--steel);background-size:cover;background-position:center;position:relative}
+.proj-photo .sector-tag{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--ink);color:var(--white);padding:6px 12px}
+.proj-body{padding:24px 24px 28px;display:flex;flex-direction:column;flex:1}
+.proj h3{font-size:25px;line-height:1.08}
+.proj .loc{margin-top:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.proj p{margin-top:12px;font-size:14px;color:#4A535C;flex:1}
+.proj .meta{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:24px;font-size:12px;color:#4A535C}
+.proj .meta b{display:block;font-family:'Barlow Condensed';font-size:17px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+@media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--white);padding:88px 0}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta h2{font-size:clamp(34px,4vw,52px);max-width:18ch;margin-top:12px}
+.cta p{margin-top:14px;color:rgba(255,255,255,.72);max-width:48ch}
+
+/* FOOTER (same as homepage) */
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:72px 0 36px;font-size:14px;border-top:1px solid var(--line-light)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-light)}
+.f-grid h4{font-family:'Barlow Condensed';font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:16px}
+.f-grid ul{list-style:none}
+.f-grid li{margin-bottom:10px}
+.f-grid a:hover{color:var(--white)}
+.f-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:12.5px;color:rgba(255,255,255,.4)}
+@media(max-width:920px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="const n=document.getElementById('navlinks');const open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="about-us.html">Who We Are</a></li>
+      <li><a href="index.html#sectors">What We Do</a></li>
+      <li><a class="active" href="projects.html">Projects</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+    <a class="nav-cta" href="contact-us.html">Start a Project</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Our Work</p>
+    <h1>Projects</h1>
+    <p>Stores, warehouses, and maintenance programs delivered across 48 states — open-store, overnight, on schedule.</p>
+  </div>
+</section>
+
+<div class="filterbar">
+  <div class="wrap">
+    <button class="fbtn active" data-filter="all">All Projects</button>
+    <button class="fbtn" data-filter="retail">Retail Construction</button>
+    <button class="fbtn" data-filter="warehouse">Warehouse &amp; Industrial</button>
+    <button class="fbtn" data-filter="maintenance">Asset Maintenance</button>
+  </div>
+</div>
+
+<section class="projects">
+  <div class="wrap">
+    <div class="grid">
+      <!-- SAMPLE PROJECTS — replace all 9 with real RJB projects before launch -->
+
+      <article class="proj" data-sector="retail">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Retail</span>
+        </div>
+        <div class="proj-body">
+          <h3>Big Box Remodel Program</h3>
+          <div class="loc">Mid-Atlantic Region</div>
+          <p>Multi-store interior remodel program for a national home improvement retailer — fixturing, drywall, and finishes, executed overnight in open stores.</p>
+          <div class="meta"><span><b>40+</b>stores</span><span><b>0</b>lost selling days</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="retail">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Retail</span>
+        </div>
+        <div class="proj-body">
+          <h3>Salon Refresh Rollout</h3>
+          <div class="loc">Pennsylvania</div>
+          <p>Interior construction and brand refresh across a 25-location salon portfolio — phased scheduling to keep every location operating through the work.</p>
+          <div class="meta"><span><b>25</b>locations</span><span><b>1</b>accountable partner</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="retail">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1601599963565-b7f49deb352a?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Retail</span>
+        </div>
+        <div class="proj-body">
+          <h3>Curbside Pickup Retrofit Program</h3>
+          <div class="loc">Multi-State</div>
+          <p>Site and storefront modifications enabling curbside fulfillment across a national grocery portfolio — striping, signage, canopies, and exterior work.</p>
+          <div class="meta"><span><b>Multi</b>state</span><span><b>Live</b>operations</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="warehouse">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Warehouse</span>
+        </div>
+        <div class="proj-body">
+          <h3>Fulfillment Center Interior Build-Out</h3>
+          <div class="loc">Northeast</div>
+          <p>Interior construction for a national e-commerce fulfillment facility — offices, breakrooms, and operational spaces built around an active distribution schedule.</p>
+          <div class="meta"><span><b>Active</b>facility</span><span><b>On</b>schedule</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="warehouse">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Warehouse</span>
+        </div>
+        <div class="proj-body">
+          <h3>Distribution Center Floor Program</h3>
+          <div class="loc">Multi-State</div>
+          <p>Concrete floor repair, joint work, and coatings across a regional distribution network — sequenced bay-by-bay to keep product moving.</p>
+          <div class="meta"><span><b>Zero</b>downtime</span><span><b>Bay</b>sequenced</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="warehouse">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Warehouse</span>
+        </div>
+        <div class="proj-body">
+          <h3>Fire Protection Upgrade Package</h3>
+          <div class="loc">Kentucky · Texas · Georgia</div>
+          <p>Dry fire sprinkler system upgrades across multiple big-box distribution sites — code compliance work delivered with zero disruption to store operations.</p>
+          <div class="meta"><span><b>3</b>sites</span><span><b>Code</b>compliant</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="maintenance">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Maintenance</span>
+        </div>
+        <div class="proj-body">
+          <h3>National Exterior Coatings Program</h3>
+          <div class="loc">48 States</div>
+          <p>Repaint and waterproofing program for a Fortune 500 retail portfolio — surface prep, coatings, and sealants to a single national specification.</p>
+          <div class="meta"><span><b>Self</b>performed</span><span><b>1</b>spec, nationwide</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="maintenance">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Maintenance</span>
+        </div>
+        <div class="proj-body">
+          <h3>Building Envelope Restoration</h3>
+          <div class="loc">Southeast</div>
+          <p>Sealant replacement, masonry repair, and waterproofing across a regional retail portfolio — protecting the asset between capital cycles.</p>
+          <div class="meta"><span><b>Portfolio</b>scale</span><span><b>Multi</b>year</span></div>
+        </div>
+      </article>
+
+      <article class="proj" data-sector="maintenance">
+        <div class="proj-photo" style="background-image:linear-gradient(180deg,rgba(21,25,30,0),rgba(21,25,30,.25)),url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=70')">
+          <span class="sector-tag">Maintenance</span>
+        </div>
+        <div class="proj-body">
+          <h3>Storefront Security Hardware Program</h3>
+          <div class="loc">Multi-State</div>
+          <p>3-point locking system installation across a national retail portfolio — loss prevention, durability, and energy performance in one upgrade.</p>
+          <div class="meta"><span><b>LP</b>focused</span><span><b>Portfolio</b>wide</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Your Next Project</p>
+      <h2>Let's build it together.</h2>
+      <p>From a single store to a 900-store program — one accountable partner, inception to completion.</p>
+    </div>
+    <a class="btn btn-solid" href="contact-us.html">Start a Project <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors" style="height:48px;width:auto;background:var(--white);padding:5px 10px;border-radius:2px;margin-bottom:18px">
+        <h4>RJB Contracting, Inc.</h4>
+        <p>562 Ridge Road, Spring City, PA 19475<br>info@rjbpro.com</p>
+        <p style="margin-top:14px">Member: ICSC · RFMA · ConnexFM</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="about-us.html">About Us</a></li><li><a href="about-us.html#leadership">Leadership</a></li><li><a href="careers.html">Careers</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="retail-construction.html">Retail Construction</a></li><li><a href="warehouse-construction.html">Warehouse</a></li><li><a href="asset-maintenance.html">Asset Maintenance</a></li></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul><li><a href="contact-us.html">Start a Project</a></li><li><a href="subcontractors.html">Become a Subcontractor</a></li><li><a href="https://www.linkedin.com/company/rjbpro" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 RJB Contracting, Inc. All rights reserved.</span>
+      <span>Family-owned and operated since 1992.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Sector filter
+document.querySelectorAll('.fbtn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.proj').forEach(p=>{
+      p.classList.toggle('hide', f!=='all' && p.dataset.sector!==f);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
