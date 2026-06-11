@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJB Contracting | National Commercial Construction &amp; Asset Maintenance</title>
+<meta name="description" content="RJB Contracting plans, builds, and maintains stores and warehouses across 48 states. Family-owned since 1992. Trusted by America's biggest retail brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   RJB PRO — HOMEPAGE V2 ("light editorial-institutional")
+   Drop this file into the repo as homepage-v2.html to preview
+   side-by-side with the live index.html.
+   IMAGE SLOTS: same as v1 — swap the URLs below for RJB photos.
+   ========================================================= */
+:root{
+  --img-hero:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2000&q=72');
+  --img-retail:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1100&q=72');
+  --img-warehouse:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1100&q=72');
+  --img-maintain:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=72');
+  --img-perform:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=72');
+
+  --ink:#181B1E;
+  --body:#41464C;
+  --bg:#FAF9F7;          /* warm paper */
+  --bg-alt:#F1EFEA;      /* deeper warm panel */
+  --white:#FFFFFF;
+  --red:#E05206;         /* RJB logo orange — color-pick your logo for the exact hex and adjust this ONE value; everything follows */
+  --line:#E3E0D9;
+  --line-dark:rgba(24,27,30,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Inter',sans-serif;color:var(--body);background:var(--bg);font-size:16.5px;line-height:1.65}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Schibsted Grotesk',sans-serif;color:var(--ink);font-weight:700;letter-spacing:-.022em;line-height:1.04}
+.wrap{max-width:1280px;margin:0 auto;padding:0 36px}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.rule{border:none;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Schibsted Grotesk';font-size:15px;font-weight:600;padding:15px 28px;border-radius:999px;transition:all .2s}
+.btn .arr{transition:transform .2s}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-ink{background:var(--ink);color:var(--white);border:1px solid var(--ink)}
+.btn-ink:hover{background:#000}
+.btn-line{border:1px solid var(--line-dark);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+
+/* NAV — light, logo sits naturally */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo img{height:46px;width:auto;display:block}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Schibsted Grotesk';font-size:15px;font-weight:500;color:var(--ink);opacity:.75;transition:opacity .2s}
+.nav-links a:hover,.nav-links a:focus-visible{opacity:1}
+.nav-cta{font-family:'Schibsted Grotesk';font-size:14.5px;font-weight:600;color:var(--white);background:var(--ink);padding:12px 22px;border-radius:999px;transition:background .2s}
+.nav-cta:hover{background:#000}
+.menu-btn{display:none;background:none;border:1px solid var(--line-dark);color:var(--ink);padding:9px 16px;font-family:'Schibsted Grotesk';font-size:14px;border-radius:999px;cursor:pointer}
+@media(max-width:940px){
+  .nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:10px 36px 22px;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-links li{padding:12px 0}
+  .menu-btn{display:block}
+  .nav-cta{display:none}
+}
+
+/* HERO — editorial: type-led on paper, photo below */
+.hero{padding:182px 0 0}
+.hero h1{font-size:clamp(48px,6.6vw,96px);max-width:18ch;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .lede{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-top:34px;flex-wrap:wrap}
+.hero .lede p{max-width:52ch;font-size:19px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-photo{margin-top:64px;height:62vh;min-height:420px;background:var(--img-hero) center/cover no-repeat var(--bg-alt);border-radius:14px;position:relative;overflow:hidden}
+.hero-photo .cap{position:absolute;left:22px;bottom:18px;background:rgba(250,249,247,.92);backdrop-filter:blur(6px);border-radius:8px;padding:10px 16px;font-size:13px;color:var(--ink)}
+.hero-clients{padding:40px 0 0}
+.hero-clients .row{display:flex;align-items:center;gap:0 36px;padding:26px 0;border-bottom:1px solid var(--line)}
+.hero-clients .lbl{flex:0 0 auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A8F95}
+.hero-clients span.c{font-family:'Schibsted Grotesk';font-weight:600;font-size:18px;color:#6A7077;white-space:nowrap}
+.marquee{flex:1;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee .track{display:flex;gap:52px;width:max-content;animation:scroll 55s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .marquee{mask-image:none;-webkit-mask-image:none}
+  .marquee .track{animation:none;flex-wrap:wrap;gap:14px 36px;width:auto}
+  .marquee .track[aria-hidden="true"]{display:none}
+}
+
+/* STATS — quiet, editorial */
+.stats{padding:84px 0 0}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.stat .n{font-family:'Schibsted Grotesk';font-weight:800;font-size:64px;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.stat .n sup{font-size:30px;color:var(--red)}
+.stat .l{margin-top:10px;font-size:15px;max-width:24ch}
+@media(max-width:940px){.stats .grid{grid-template-columns:1fr 1fr;gap:36px}}
+
+/* SECTORS — editorial cards, photo + caption */
+.sectors{padding:110px 0 40px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:54px}
+.sec-head h2{font-size:clamp(34px,4vw,54px);max-width:18ch;margin-top:16px}
+.sec-head p{max-width:44ch}
+.scards{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.scard .photo{height:300px;border-radius:14px;background-size:cover;background-position:center;background-color:var(--bg-alt);transition:transform .3s;overflow:hidden}
+.scard:hover .photo{transform:translateY(-4px)}
+.scard.s1 .photo{background-image:var(--img-retail)}
+.scard.s2 .photo{background-image:var(--img-warehouse)}
+.scard.s3 .photo{background-image:var(--img-maintain)}
+.scard h3{font-size:26px;margin-top:22px}
+.scard p{margin-top:10px;font-size:15px}
+.scard .go{display:inline-block;margin-top:14px;font-family:'Schibsted Grotesk';font-weight:600;font-size:15px;color:var(--red)}
+@media(max-width:940px){.scards{grid-template-columns:1fr}.sec-head{flex-direction:column;align-items:flex-start}}
+
+/* FOOTPRINT — light panel, quiet map wall */
+.footprint{margin:110px 0 0;background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:96px 0}
+.fp-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:center}
+.fp-left h2{font-size:clamp(34px,4vw,54px);margin-top:16px}
+.fp-left p{margin-top:20px;max-width:44ch}
+.fp-left .btn{margin-top:30px}
+.states{display:flex;flex-wrap:wrap;gap:9px}
+.states span{font-family:'Schibsted Grotesk';font-weight:600;font-size:15.5px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);color:#A9ADB2;background:var(--white)}
+.states span.on{color:var(--ink);border-color:var(--ink)}
+@media(max-width:940px){.fp-grid{grid-template-columns:1fr;gap:48px}}
+
+/* SELF-PERFORM — full-width photo band + overlap card */
+.perform{padding:110px 0}
+.pf-photo{height:520px;border-radius:14px;background:var(--img-perform) center/cover no-repeat var(--bg-alt)}
+.pf-card{max-width:680px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:46px 48px;margin:-120px auto 0;position:relative;box-shadow:0 24px 60px rgba(24,27,30,.07)}
+.pf-card h2{font-size:clamp(30px,3.4vw,42px);margin-top:14px}
+.pf-card p{margin-top:16px}
+.pf-list{margin-top:26px;list-style:none}
+.pf-list li{display:flex;gap:18px;padding:15px 0;border-top:1px solid var(--line);font-size:15px}
+.pf-list b{font-family:'Schibsted Grotesk';font-weight:700;color:var(--ink);min-width:180px}
+@media(max-width:680px){.pf-card{padding:32px 26px;margin-top:-60px}}
+
+/* QUOTE */
+.quote{padding:40px 0 110px}
+.quote blockquote{font-family:'Schibsted Grotesk';font-weight:600;font-size:clamp(26px,3.2vw,42px);line-height:1.22;letter-spacing:-.015em;color:var(--ink);max-width:26ch}
+.quote blockquote em{font-style:normal;color:var(--red)}
+.quote cite{display:block;margin-top:24px;font-style:normal;font-size:14px;color:#8A8F95}
+
+/* INSIGHTS — editorial list, not cards */
+.insights{padding:96px 0;border-top:1px solid var(--line)}
+.ins-list{margin-top:40px}
+.ins-item{display:grid;grid-template-columns:160px 1fr auto;gap:32px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);transition:background .2s}
+.ins-item:hover h3{color:var(--red)}
+.ins-item .k{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A8F95}
+.ins-item h3{font-size:23px;font-weight:600;transition:color .2s}
+.ins-item .arr{font-family:'Schibsted Grotesk';font-size:22px;color:var(--ink)}
+@media(max-width:680px){.ins-item{grid-template-columns:1fr;gap:8px}}
+
+/* CTA BAND — the one dark moment */
+.cta{background:var(--ink);color:var(--white);border-radius:18px;margin:0 36px 110px;padding:84px 0}
+.cta .inner{max-width:1208px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.cta h2{color:var(--white);font-size:clamp(32px,3.8vw,52px);max-width:18ch}
+.cta p{margin-top:14px;color:rgba(255,255,255,.7);max-width:46ch}
+.cta .btn{background:var(--white);color:var(--ink);border:1px solid var(--white)}
+@media(max-width:680px){.cta{margin:0 16px 80px}}
+
+/* FOOTER — light */
+footer{border-top:1px solid var(--line);padding:72px 0 40px;font-size:14.5px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+.f-grid h4{font-family:'Schibsted Grotesk';font-size:15px;font-weight:700;color:var(--ink);margin-bottom:16px}
+.f-grid ul{list-style:none}
+.f-grid li{margin-bottom:10px}
+.f-grid a:hover{color:var(--ink)}
+.f-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:13px;color:#8A8F95}
+@media(max-width:940px){.f-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html"><img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors"></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="const n=document.getElementById('navlinks');const open=n.classList.toggle('open');this.setAttribute('aria-expanded',open)">Menu</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="about-us.html">Who We Are</a></li>
+      <li><a href="#sectors">What We Do</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="careers.html">Careers</a></li>
+    </ul>
+    <a class="nav-cta" href="contact-us.html">Start a Project</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">National Commercial Contracting &amp; Asset Maintenance · Since 1992</p>
+    <h1>The contractor behind America's <em>biggest retail brands.</em></h1>
+    <div class="lede">
+      <p>RJB plans, builds, and maintains stores and warehouses across 48 states — open-store, overnight, on schedule. Family-owned, and built that way on purpose.</p>
+      <div class="actions">
+        <a class="btn btn-ink" href="projects.html">See our work <span class="arr">&rarr;</span></a>
+        <a class="btn btn-line" href="#sectors">What we do</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <span class="cap">RJB crew · overnight retail remodel</span>
+    </div>
+  </div>
+</section>
+
+<section class="hero-clients">
+  <div class="wrap">
+    <div class="row">
+      <span class="lbl">Trusted by</span>
+      <div class="marquee"><div class="track"><span class="c">Home Depot</span><span class="c">Target</span><span class="c">Walmart</span><span class="c">Amazon</span><span class="c">Lowe's</span><span class="c">Sam's Club</span><span class="c">Kohl's</span><span class="c">BJ's</span><span class="c">7-Eleven</span><span class="c">Panera Bread</span><span class="c">Sheetz</span><span class="c">T-Mobile</span><span class="c">Hair Cuttery</span><span class="c">Hannaford</span><span class="c">Weis Markets</span><span class="c">Ahold Delhaize</span><span class="c">Savers</span><span aria-hidden="true" style="display:contents"><span class="c">Home Depot</span><span class="c">Target</span><span class="c">Walmart</span><span class="c">Amazon</span><span class="c">Lowe's</span><span class="c">Sam's Club</span><span class="c">Kohl's</span><span class="c">BJ's</span><span class="c">7-Eleven</span><span class="c">Panera Bread</span><span class="c">Sheetz</span><span class="c">T-Mobile</span><span class="c">Hair Cuttery</span><span class="c">Hannaford</span><span class="c">Weis Markets</span><span class="c">Ahold Delhaize</span><span class="c">Savers</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap grid">
+    <div class="stat"><div class="n">48</div><div class="l">states served, plus Canada</div></div>
+    <div class="stat"><div class="n">1992</div><div class="l">founded — family-owned for over 30 years</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">self-performed trades: paint, drywall, carpentry, fixturing</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">point of accountability, inception to completion</div></div>
+  </div>
+</section>
+
+<section class="sectors" id="sectors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What We Do</p>
+        <h2>Built for the open-store environment.</h2>
+      </div>
+      <p>Three integrated practices, one accountable partner. We work nights, phase around operations, and protect your customer experience while we build.</p>
+    </div>
+    <div class="scards">
+      <a class="scard s1" href="retail-construction.html">
+        <div class="photo"></div>
+        <h3>Retail Construction</h3>
+        <p>Remodels, rollouts, and refresh programs for grocery, big box, convenience, and restaurant — at portfolio scale.</p>
+        <span class="go">Explore &rarr;</span>
+      </a>
+      <a class="scard s2" href="warehouse-construction.html">
+        <div class="photo"></div>
+        <h3>Warehouse &amp; Industrial</h3>
+        <p>Ground-up and renovation work for distribution and fulfillment, planned around live operations.</p>
+        <span class="go">Explore &rarr;</span>
+      </a>
+      <a class="scard s3" href="asset-maintenance.html">
+        <div class="photo"></div>
+        <h3>Asset Maintenance</h3>
+        <p>Coatings, building envelope, and brand-standard upkeep that protect the asset between capital cycles.</p>
+        <span class="go">Explore &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="footprint">
+  <div class="wrap fp-grid">
+    <div class="fp-left">
+      <p class="eyebrow">National Footprint</p>
+      <h2>One team. 48 states.</h2>
+      <p>From our headquarters and training facility in Spring City, PA, RJB fields crews and managed vendor programs across the country — the same standards everywhere we work.</p>
+      <a class="btn btn-line" href="about-us.html">About RJB <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="states" aria-label="States served">
+      <span class="on">AL</span><span class="on">AZ</span><span class="on">AR</span><span class="on">CA</span><span class="on">CO</span><span class="on">CT</span><span class="on">DE</span><span class="on">FL</span><span class="on">GA</span><span class="on">ID</span><span class="on">IL</span><span class="on">IN</span><span class="on">IA</span><span class="on">KS</span><span class="on">KY</span><span class="on">LA</span><span class="on">ME</span><span class="on">MD</span><span class="on">MA</span><span class="on">MI</span><span class="on">MN</span><span class="on">MS</span><span class="on">MO</span><span class="on">MT</span><span class="on">NE</span><span class="on">NV</span><span class="on">NH</span><span class="on">NJ</span><span class="on">NM</span><span class="on">NY</span><span class="on">NC</span><span class="on">ND</span><span class="on">OH</span><span class="on">OK</span><span class="on">OR</span><span class="on">PA</span><span class="on">RI</span><span class="on">SC</span><span class="on">SD</span><span class="on">TN</span><span class="on">TX</span><span class="on">UT</span><span class="on">VT</span><span class="on">VA</span><span class="on">WA</span><span class="on">WV</span><span class="on">WI</span><span class="on">WY</span><span>AK</span><span>HI</span>
+    </div>
+  </div>
+</section>
+
+<section class="perform">
+  <div class="wrap">
+    <div class="pf-photo" role="img" aria-label="RJB self-perform crew at work"></div>
+    <div class="pf-card">
+      <p class="eyebrow">How We Deliver</p>
+      <h2>Self-perform where it counts.</h2>
+      <p>Our own crews handle the trades that make or break a retail schedule — backed by a vetted national vendor network we manage like our own people.</p>
+      <ul class="pf-list">
+        <li><b>Self-perform</b><span>Commercial paint and coatings, drywall, carpentry, and fixturing by RJB crews.</span></li>
+        <li><b>Managed programs</b><span>Multi-site rollouts with single-point accountability and consistent QC.</span></li>
+        <li><b>Open-store expertise</b><span>Overnight and phased work that never closes your doors.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>&ldquo;RJB has been an <em>incredibly reliable</em> partner. They've consistently come through, especially with last-minute needs.&rdquo;</blockquote>
+    <cite>Facilities Leadership · Fortune 500 Retail Client</cite>
+  </div>
+</section>
+
+<section class="insights">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div>
+        <p class="eyebrow">Insights</p>
+        <h2>From the field.</h2>
+      </div>
+      <a class="btn btn-line" href="insights.html">All insights <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="ins-list">
+      <a class="ins-item" href="insights.html">
+        <span class="k">Loss Prevention</span>
+        <h3>The ROI of 3-point locking across a retail portfolio</h3>
+        <span class="arr">&rarr;</span>
+      </a>
+      <a class="ins-item" href="insights.html">
+        <span class="k">Store Operations</span>
+        <h3>Building for curbside: what the pickup era demands of your sites</h3>
+        <span class="arr">&rarr;</span>
+      </a>
+      <a class="ins-item" href="insights.html">
+        <span class="k">Community</span>
+        <h3>Beyond the job site: RJB in the community</h3>
+        <span class="arr">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="inner">
+    <div>
+      <p class="eyebrow" style="color:#F5B894">Your Next Project</p>
+      <h2>One store or nine hundred. One accountable partner.</h2>
+      <p>Tell us what you're planning. You'll hear back from a person, not a queue.</p>
+    </div>
+    <a class="btn" href="contact-us.html">Start a project <span class="arr">&rarr;</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="https://rjbpro.com/wp-content/uploads/2023/06/RJB-Logo-WithDescriptor.png" alt="RJB Integrated Commercial Contractors" style="height:48px;width:auto;margin-bottom:18px">
+        <p>562 Ridge Road, Spring City, PA 19475<br>info@rjbpro.com</p>
+        <p style="margin-top:14px">Member: ICSC · RFMA · ConnexFM</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="about-us.html">About Us</a></li><li><a href="about-us.html#leadership">Leadership</a></li><li><a href="careers.html">Careers</a></li></ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="retail-construction.html">Retail Construction</a></li><li><a href="warehouse-construction.html">Warehouse</a></li><li><a href="asset-maintenance.html">Asset Maintenance</a></li></ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul><li><a href="contact-us.html">Start a Project</a></li><li><a href="subcontractors.html">Become a Subcontractor</a></li><li><a href="https://www.linkedin.com/company/rjbpro" rel="noopener">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2026 RJB Contracting, Inc. All rights reserved.</span>
+      <span>Family-owned and operated since 1992.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
